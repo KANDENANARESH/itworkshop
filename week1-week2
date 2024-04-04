@@ -1,0 +1,285 @@
+Unix users commands
+
+These commands allow you to get basic information about Unix users in your environment.
+whoami – show your username
+id – print user identity
+groups – show which groups user belongs to
+passwd – change user password
+who – find out who is logged into the system
+last – show history of logins into the system
+Unix file operations
+Navigating filesystem and managing files and access permissions:
+nslookup google.com – server address
+cp – copy files (work in progress)
+rm – remove files and directories (work in progress)
+mv – rename or move files and directories to another location
+echo – “hello world”
+chown – change file/directory ownership
+Unix directory management commands
+Navigating filesystems and managing directories:
+•cd – change directory
+•pwd – confirm current directory
+•mkdir – make new directory
+•rmdir – remove directories in Unix
+Main features of unix :
+multiuser - More than one user can use the machine
+Multitasking- More than one program can be run at a time.
+2|PagePortability – This means the operating system can be easily converted to run on different
+browsers.
+Control Commands:
+These commands are a two-key combination where a letter is pressed simultaneously with
+the ‘Ctrl’ key.
+•Control-C: This command terminates the currently running foreground process.
+•Control-D: This command terminates the currently running login or terminal
+•
+Control-Z: This command suspends the currently running foreground process to
+the background.
+Commandps - displays a snapshot of all current processes
+Common Syntax$ ps [options]
+Example$ ps -ef
+Show every process running, formatted as a table
+Commandtop - displays a live status of current processes
+Common Syntax$ top [options]
+Example$ top
+Show a live view of all current processes
+Commandbg - resume a background suspended a job
+Common Syntax$ bg [job_spec …]
+Example$ xterm
+Ctrl-Z
+$ bg
+Continue running a job that was previously suspended (using Ctrl-Z) in the b
+3|PageCommandclear – clear a terminal screen
+Common Syntax$ clear
+Example$ clear
+Clear all prior text from the terminal screen
+Commandhistory – print history of commands in the current session
+Common Syntax$ history [options]
+Example$ history
+#1) touch: Create a new file or update its timestamp.
+•Syntax: touch [OPTION]…[FILE]
+•Example: Create empty files called ‘file1’ and ‘file2’
+•$ touch file1 file2
+#2) cat: Concatenate files and print to stdout.
+•Syntax: cat [OPTION]…[FILE]
+•Example: Create file1 with entered cotent
+•$ cat > file1
+•Hello
+•^D
+#3) cp: Copy files
+•Syntax: cp [OPTION]source destination
+•Example: Copies the contents from file1 to file2 and the contents of file1 are retained
+•$ cp file1 file2
+#4) mv: Move files or rename files
+•Syntax: mv [OPTION]source destination
+•Example: Create empty files called ‘file1’ and ‘file2’
+•$ mv file1 file2
+#5) rm: Remove files and directories
+•Syntax: rm [OPTION]…[FILE]
+•Example: Delete file1
+4|Page•
+$ rm file1
+#6) mkdir: Make a directory
+•Syntax: mkdir [OPTION] directory
+•Example: Create a directory called dir1
+•$ mkdir dir1
+#7) rmdir: Remove a directory
+•Syntax: rmdir [OPTION] directory
+•Example: Create empty files called ‘file1’ and ‘file2’
+•$ rmdir dir1
+#8) cd: Change directory
+•Syntax: cd [OPTION] directory
+•Example: Change working directory to dir1
+•$ cd dir1
+#9) pwd: Print the present working directory
+•Syntax: pwd [OPTION]
+•Example: Print ‘dir1’ if a current working directory is dir1
+#10) ls: List directory contents
+•Syntax: ls [OPTION] [FILE]
+•Example: list all (including hidden files) directory contents, in long format, sorted by
+•$ ls -alt
+•
+•
+•
+$ls -l
+$ls -ltr
+$ls -a
+#11) which: Locate a command
+•Syntax: which [-a] filename
+•Example: List all paths from where ‘cat’ can run
+•$ which -a cat
+#12) man: Interface for working with the online reference manuals.
+•Syntax: man [-s section] item
+•Example: Show the manual page for the ‘cat’ command
+•$ man cat
+5|Page#13) su: Change user-id or become super-user.
+•Syntax: su [options] [username]
+•Example: Change user-id to ‘user1’ (if it exists)
+•$ su user1
+#14) sudo: Execute a command as some other user or super-user
+•Syntax: sudo [options] [command]
+•Example: Get a file listing of an unlisted directory
+•$ sudo ls /usr/local/protected
+#15) find: Used to search for files and directories as mentioned in the ‘expression’
+•Syntax: find [starting-point] [expression]
+•Example: In ‘/usr’ folder, find character device files, of the name ‘backup’
+•$ find /usr -type c -name backup
+#16) du: Estimate disk usage is blocks
+•Syntax: du [options] [file]
+•Example: Show the number of blocks occupied by files in the current directory
+•$ du
+#17) df: Show the number of free blocks for the mounted file system
+•Syntax: df [options] [file]
+•Example: Show the number of free blocks in local file systems
+•$ df -l
+#18) cal: Displays the calendar.
+•Syntax: cal [[month] year]
+•Example: display the calendar for April 2018
+•$ cal 4 2018
+#19) date: Displays the system date and time.
+•Syntax: date [+format]
+•Example: Display the date in dd/mm/yy format
+•$ date +%d/%m/%y
+#20) who: Displays the list of users currently logged in
+•
+Syntax: who [option] … [file][arg1]
+6|Page•Example: List all currently logged-in users
+•$ who
+#21) whoami: Displays the user id of the currently logged-in user.
+•Syntax: whoami [option]
+•Example: List currently logged-in user
+•$ whoami
+
+
+-------week2------
+
+
+user@naresh:~$  cat> grepfile.txt
+welcome to phython
+rgukt is one of the greatest university                
+ubuntu and linux commands
+this is wonderfuluser@naresh:~$ cat grepfile.txt
+welcome to phython
+rgukt is one of the greatest university
+ubuntu and linux commands
+this is wonderfuluser@naresh:~$ grep "linux" grepfile.txt
+ubuntu and linux commands
+user@naresh:~$ grep "one" grepfile.txt
+rgukt is one of the greatest university
+user@naresh:~$ grep -o "one" grepfile.txt
+one
+user@naresh:~$ grep -o "o" grepfile.txt
+o
+o
+o
+o
+o
+o
+o
+user@naresh:~$ grep -v "one" grepfile.txt
+welcome to phython
+ubuntu and linux commands
+this is wonderful
+user@naresh:~$ grep -e "one" grepfile.txt
+rgukt is one of the greatest university
+user@naresh:~$ grep -h "welcome" grepfile.txt
+welcome to phython
+user@naresh:~$ grep -e "one" -e "this" grepfile.txt
+rgukt is one of the greatest university
+this is wonderful
+user@naresh:~$ grep -n "welcome" grepfile.txt
+1:welcome to phython
+user@naresh:~$ 
+
+user@naresh:~$ cat> grepfile.txt
+sunday
+monday
+tuesday
+wednesday
+thrusday
+friday
+saturday
+user@naresh:~$ cat grepfile.txt
+sunday
+monday
+tuesday
+wednesday
+thrusday
+friday
+saturday
+user@naresh:~$ grep -h "t" grepfile.txt
+tuesday
+thrusday
+saturday
+user@naresh:~$ sort -u grepfile.txt
+friday
+monday
+saturday
+sunday
+thrusday
+tuesday
+wednesday
+user@naresh:~$ sort -m grepfile.txt
+sunday
+monday
+tuesday
+wednesday
+thrusday
+friday
+saturday
+user@naresh:~$ cat > sendfile.txt
+
+Unable to find the proxy server
+
+Firefox is configured to use a proxy server that can’t be found.
+
+    Check the proxy settings to make sure that they are correct.
+    Check to make sure your computer has a working network connection.
+user@naresh:~$ sed 's/proxy/PROXY' sendfile.txt
+sed: -e expression #1, char 13: unterminated `s' command
+user@naresh:~$ sed 's/proxy/PROXY/' sendfile.txt
+
+Unable to find the PROXY server
+
+Firefox is configured to use a PROXY server that can’t be found.
+
+    Check the PROXY settings to make sure that they are correct.
+    Check to make sure your computer has a working network connection.
+user@naresh:~$ sed '/PROXY/d' sendfile.txt
+
+Unable to find the proxy server
+
+Firefox is configured to use a proxy server that can’t be found.
+
+    Check the proxy settings to make sure that they are correct.
+    Check to make sure your computer has a working network connection.
+user@naresh:~$ sed '/proxy/d' sendfile.txt
+
+
+
+    Check to make sure your computer has a working network connection.
+user@naresh:~$ cat sendfile.txt
+
+Unable to find the proxy server
+
+Firefox is configured to use a proxy server that can’t be found.
+
+    Check the proxy settings to make sure that they are correct.
+    Check to make sure your computer has a working network connection.
+user@naresh:~$ sed '/network/d' sendfile.txt
+
+Unable to find the proxy server
+
+Firefox is configured to use a proxy server that can’t be found.
+
+    Check the proxy settings to make sure that they are correct.
+user@naresh:~$ sed 's/network/NETWORK' sendfile.txt
+sed: -e expression #1, char 17: unterminated `s' command
+user@naresh:~$ sed 's/network/NETWORK/' sendfile.txt
+
+Unable to find the proxy server
+
+Firefox is configured to use a proxy server that can’t be found.
+
+    Check the proxy settings to make sure that they are correct.
+    Check to make sure your computer has a working NETWORK connection.
+user@naresh:~$ 
