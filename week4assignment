@@ -1,0 +1,18 @@
+***************
+<html>
+<body>
+<?php
+for($i=1;$i<=6;$i++)
+{
+	for($j=1;$j<=6;$j++)
+	{
+		{
+			$tab=$i*$j;
+			echo " ".$tab;
+		}
+	}
+	echo "<br>";
+}		
+?>
+</body>
+</html>
